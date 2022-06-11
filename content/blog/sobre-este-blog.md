@@ -1,7 +1,7 @@
 ---
 title: "Sobre este blog"
 date: 2022-03-26T20:00:00-03:00
-draft: true
+draft: false
 description: "Artículo introductorio a este sitio. "
 tags: [ 'Acerca de', 'Falopa', 'Emoción' ]
 ---
