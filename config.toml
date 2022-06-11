@@ -1,4 +1,4 @@
-baseURL = 'https://sunny-hummingbird-989833.netlify.app/'
+baseURL = 'http://example.org/'
 languageCode = 'es'
 title = 'eliastello.ar'
 
