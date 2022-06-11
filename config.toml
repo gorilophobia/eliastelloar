@@ -1,0 +1,13 @@
+baseURL = 'http://example.org/'
+languageCode = 'es'
+title = 'eliastello.ar'
+
+preserveTaxonomyNames = true
+removePathAccents = true
+paginate = 5
+
+[params]
+	css = ["css/style.css"]
+
+[taxonomies]
+	tag = 'tags'

@@ -1,0 +1,47 @@
+{{ define "main" }}
+	<div id="container-avatar">
+		<img id="avatar" src="{{ site.BaseURL }}images/avatar.png" alt="perfil" />	
+	</div>
+	
+	<p id="parrafo-bio">simplemente un párrafo que trata sobre lo que se trata un párrafo que debe ser alargado hasta tener la longitud correcta como para ocupar el espacio necesario por la estructura de la página web.</p>	
+	
+	{{ with .Param "tags" }}
+		{{ range $index, $tag := (. | sort) }} 
+			{{ with $.Site.GetPage (printf "/%s/%s" "tags" $tag) }}
+				<a href="{{ .Permalink }}">#{{ $tag }}</a>
+			{{ end }}
+		{{ end }}
+	{{ end }}
+	
+	<div id="container-lista-tags">
+    {{ if ne (len $.Site.Taxonomies.tags) 0 }}        
+        {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
+          {{ $tagCount := len $taxonomy.Pages }}
+            <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}" 
+            class="container-tag">
+              {{ .Page.Title }}<sup>{{ $tagCount }}</sup>              
+            </a>
+        {{ end }}
+    {{ end }}
+	</div>
+	
+	<ul id="container-lista-posts">
+	{{ range .Paginator.Pages }}
+		<div id="post-container">
+			<a id="titulo-post" href="{{ .RelPermalink }}">{{ .Title }}</a>
+			<p id="descripcion-post">{{ .Description }}</p>
+			<ul id="lista-tags-post">
+				{{ range .Params.tags }}
+					<li>
+						<a class="container-tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+							{{ . }}							
+						</a>
+					</li>			
+				{{ end }}
+			</ul>
+			<p id="fecha-post">{{ .Date | time.Format "2/1/2006" }}</p>
+		</div>
+	{{ end }}
+	{{ partial "pagination.html" . }}
+	</ul>
+{{ end }}

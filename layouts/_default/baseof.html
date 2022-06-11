@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+{{ partial "head.html" . }}
+
+<body>
+	<div class="caja">
+  		<div class="subcaja">
+  			<main>
+   			{{ block "main" . }}
+   			{{ end }}
+  			</main>  
+  		<footer class="info"><a href="{{ .Site.BaseURL }}blog/">« Hecho en Mar del Plata »</a></footer>
+   	</div>
+  	</div>
+</body>
+</html>
