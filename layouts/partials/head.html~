@@ -1,9 +1,0 @@
-<head>
-	<meta charset="UTF-8">
-	<title>{{ .Site.Title }}</title>
-	<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/linux-libertine" type="text/css"/> 
-	<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/biolilbert" type="text/css"/> 
-	{{ range .Site.Params.css -}}
-		<link rel="stylesheet" href="{{ . | absURL }}">
-	{{- end }}
-</head>
