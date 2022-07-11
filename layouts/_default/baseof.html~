@@ -5,9 +5,10 @@
 
 <body>
 		<main>
-  			{{ block "main" . }}
-  			{{ end }}
-		</main> 
-		<footer class="info"><a href="{{ .Site.BaseURL }}blog/">« Hecho en Mar del Plata »</a></footer>
+			<div class="el-papa">
+  				{{ block "main" . }}
+  				{{ end }}
+  			</div>
+		</main>
 </body>
 </html>

@@ -1,10 +1,11 @@
 {{ define "main" }}
 	<h1 class="titulo-general">{{ .Page.Title }}</h1>	
 	<ul id="container-lista-posts">
-	{{ range .Paginator.Pages}}
+	{{ range .Paginator.Pages }}
 		<div id="post-container">
 			<a id="titulo-post" href="{{ .RelPermalink }}">{{ .Title }}</a>
 			<p id="descripcion-post">{{ .Description }}</p>
+			<span id="fecha-post">{{ .Date | time.Format "2/1/2006" }}</span>
 			<ul id="lista-tags-post">
 				{{ range .Params.tags }}
 					<li>
@@ -14,7 +15,6 @@
 					</li>			
 				{{ end }}
 			</ul>
-			<p id="fecha-post">{{ .Date | time.Format "2/1/2006" }}</p>
 		</div>
 	{{ end }}
 	{{ partial "pagination.html" . }}

@@ -1,6 +1,8 @@
 {{ define "main" }}
 	<div id="container-avatar">
-		<img id="avatar" src="{{ site.BaseURL }}images/avatar.png" alt="perfil" />	
+		<a href="{{ .Site.BaseURL }}">
+			<img id="avatar" src="{{ site.BaseURL }}images/avatar.png" alt="perfil"/>	
+		</a>
 	</div>
 	
 	<div id="parrafo-bio">simplemente un párrafo que trata sobre lo que se trata un párrafo que debe ser alargado hasta tener la longitud correcta como para ocupar el espacio necesario por la estructura de la página web.</div>	
@@ -30,6 +32,7 @@
 		<div id="post-container">
 			<a id="titulo-post" href="{{ .RelPermalink }}">{{ .Title }}</a>
 			<p id="descripcion-post">{{ .Description }}</p>
+			<span id="fecha-post">{{ .Date | time.Format "2/1/2006" }}</span>
 			<ul id="lista-tags-post">
 				{{ range .Params.tags }}
 					<li>
@@ -39,9 +42,7 @@
 					</li>			
 				{{ end }}
 			</ul>
-			<span id="fecha-post">{{ .Date | time.Format "2/1/2006" }}</span>
 		</div>
 	{{ end }}
 	{{ partial "pagination.html" . }}
 	</ul>
-{{ end }}
