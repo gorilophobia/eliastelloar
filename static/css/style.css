@@ -184,12 +184,12 @@ body {
 }
 
 #post-container{
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-left: 5px;
-	padding-right: 5px;
-	border-top: 1px solid var(--link-color);
-	border-bottom: 1px solid var(--link-color);
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
 }
 
 #titulo-post{
@@ -197,7 +197,7 @@ body {
 	font-family: var(--font-titulo);
    font-weight: normal;
    font-style: normal;
-	font-size: 32px;
+	font-size: 36px;
 	color: var(--link-color);
 }
 
@@ -241,6 +241,7 @@ body {
 
 .pag-elem{
 	text-decoration: none;
+	font-size: 16px;
 	background-color: var(--segundo-color);
 	color: var(--primer-color);
 	padding: 0.15rem 0.3rem 0.1em;
